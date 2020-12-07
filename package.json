@@ -1,0 +1,21 @@
+{
+  "name": "runegraph",
+  "version": "1.0.0",
+  "description": "GraphQL API for Old School Runescape Game Data",
+  "main": "src/server.js",
+  "repository": "https://github.com/schmidlidev/runegraph.git",
+  "author": "schmidli <schmidlidev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0"
+  }
+}
