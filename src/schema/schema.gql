@@ -3,5 +3,5 @@
 type Query {
   items: [Item]
   item(id: Int): Item
-  startsWith(prefix: String): [Item]
+  nameLike(root: String): [Item]
 }
