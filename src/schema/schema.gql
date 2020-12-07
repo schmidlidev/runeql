@@ -1,7 +1,6 @@
 # import Item from "item.gql"
 
 type Query {
-  items: [Item]
+  items(nameLike: String, limit: Int): [Item]
   item(id: Int): Item
-  nameLike(root: String): [Item]
 }

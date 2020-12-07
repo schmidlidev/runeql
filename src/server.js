@@ -3,7 +3,6 @@ import { graphqlHTTP } from "express-graphql";
 import { loadSchema } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 
-import nameLike from "./resolvers/nameLike.js";
 import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
 
@@ -15,7 +14,6 @@ const schema = await loadSchema("./src/schema/schema.gql", {
 const root = {
   item: item,
   items: items,
-  nameLike: nameLike,
 };
 
 const app = express();
