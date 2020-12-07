@@ -1,0 +1,37 @@
+# import Equipment from "equipment.gql"
+# import Weapon from "weapon.gql"
+
+type Item {
+  id: Int
+  name: String
+  incomplete: Boolean
+  members: Boolean
+  tradeable: Boolean
+  tradeable_on_ge: Boolean
+  stackable: Boolean
+  stacked: String
+  noted: Boolean
+  noteable: Boolean
+  linked_id_item: String
+  linked_id_noted: Int
+  linked_id_placeholder: Int
+  placeholder: Boolean
+  equipable: Boolean
+  equipable_by_player: Boolean
+  equipable_weapon: Boolean
+  cost: Int
+  lowalch: Int
+  highalch: Int
+  weight: Float
+  buy_limit: Int
+  quest_item: Boolean
+  release_date: String
+  duplicate: Boolean
+  examine: String
+  icon: String
+  wiki_name: String
+  wiki_url: String
+  wiki_exchange: String
+  weapon: Weapon
+  equipment: Equipment
+}

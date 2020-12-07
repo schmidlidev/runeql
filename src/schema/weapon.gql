@@ -1,0 +1,7 @@
+# import Stances from "stances.gql"
+
+type Weapon {
+  attack_speed: Int
+  weapon_type: String
+  stances: [Stances]
+}

@@ -1,0 +1,20 @@
+# import Requirements from "requirements.gql"
+
+type Equipment {
+  attack_stab: Int
+  attack_slash: Int
+  attack_crush: Int
+  attack_magic: Int
+  attack_ranged: Int
+  defence_stab: Int
+  defence_slash: Int
+  defence_crush: Int
+  defence_magic: Int
+  defence_ranged: Int
+  melee_strength: Int
+  ranged_strength: Int
+  magic_damage: Int
+  prayer: Int
+  slot: String
+  requirements: Requirements
+}
