@@ -15,5 +15,5 @@ export default async function ({ nameLike, limit }) {
     result = result.limit(limit);
   }
 
-  return result.toArray();
+  return await result.toArray();
 }
