@@ -32,6 +32,7 @@ type Item {
   wiki_name: String
   wiki_url: String
   wiki_exchange: String
+  price: Int
   weapon: Weapon
   equipment: Equipment
 }
