@@ -2,6 +2,6 @@
 
 type Stance {
   name: String! # Flick
-  type: AttackType! # Slash
-  style: String! # Accurate/Controlled/Defensive/etc
+  type: AttackType # Slash
+  style: String # Accurate/Controlled/Defensive/etc
 }
