@@ -21,15 +21,13 @@ const cachePrice = async (id, { price }) => {
   );
 };
 
-export default async (item) => {
-  if (!item.tradeable_ge) return null;
-
+export default async (id) => {
   // From cache
-  const cachedItem = await Prices.findOne({ id: item.id });
+  const cachedItem = await Prices.findOne({ id: id });
   if (cachedItem === null || Date.now() - cachedItem.timestamp > 36000000) {
     // Cache miss or Cache invalidation
-    let freshItem = await fetchPrice(item.id);
-    cachePrice(item.id, freshItem);
+    let freshItem = await fetchPrice(id);
+    cachePrice(id, freshItem);
 
     return freshItem.price;
   } else {

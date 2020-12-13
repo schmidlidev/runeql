@@ -22,7 +22,7 @@ const root = {
 const resolvers = {
   Item: {
     price(parent) {
-      return price(parent);
+      if (parent.tradeable_ge) return price(parent.id);
     },
   },
 };
