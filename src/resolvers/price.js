@@ -21,8 +21,8 @@ const cachePrice = async (id, { price }) => {
   );
 };
 
-export default async function (item) {
-  if (!item.tradeable_on_ge) return null;
+export default async (item) => {
+  if (!item.tradeable_ge) return null;
 
   // From cache
   const cachedItem = await Prices.findOne({ id: item.id });
@@ -36,4 +36,4 @@ export default async function (item) {
     // Cache hit
     return cachedItem.price;
   }
-}
+};

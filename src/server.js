@@ -9,7 +9,7 @@ import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
 import price from "./resolvers/price.js";
 
-const schema = await loadSchema("./src/schema/schema.gql", {
+const schema = await loadSchema("./src/schema/Schema.gql", {
   loaders: [new GraphQLFileLoader()],
 });
 
@@ -21,8 +21,8 @@ const root = {
 
 const resolvers = {
   Item: {
-    price(item) {
-      return price(item);
+    price(parent) {
+      return price(parent);
     },
   },
 };

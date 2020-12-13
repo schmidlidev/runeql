@@ -1,12 +1,10 @@
 import mongo from "../mongo.js";
 
-export default async function ({ duplicate, nameLike, limit }) {
+export default async ({ nameLike, limit }) => {
   const Items = mongo.collection("items");
 
   // Required and default fields
-  let query = {
-    duplicate: duplicate,
-  };
+  let query = {};
 
   // Optional query parameters
   if (nameLike) {
@@ -21,4 +19,4 @@ export default async function ({ duplicate, nameLike, limit }) {
   }
 
   return await result.toArray();
-}
+};
