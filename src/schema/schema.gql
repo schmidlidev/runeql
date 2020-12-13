@@ -1,8 +1,14 @@
 # import Item from "Item.gql"
+# import Slot from "./enums/Slot.gql"
 # import WeaponCategory from "WeaponCategory.gql"
 
 type Query {
-  items(nameLike: String, limit: Int): [Item!]!
+  items(
+    nameLike: String
+    qualifiedNameLike: String
+    slot: Slot
+    limit: Int
+  ): [Item!]!
   item(id: Int): Item
   weaponCategory(name: String): WeaponCategory
 }
