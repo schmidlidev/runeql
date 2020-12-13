@@ -1,6 +1,8 @@
 # import Item from "Item.gql"
+# import WeaponCategory from "WeaponCategory.gql"
 
 type Query {
   items(nameLike: String, limit: Int): [Item!]!
   item(id: Int): Item
+  weaponCategory(name: String): WeaponCategory
 }

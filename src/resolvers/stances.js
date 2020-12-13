@@ -1,7 +1,5 @@
-import mongo from "../mongo.js";
+import weaponCategory from "./weaponCategory.js";
 
 export default async (category) => {
-  const WeaponCategories = mongo.collection("weaponCategories");
-
-  return (await WeaponCategories.findOne({ name: category })).stances;
+  return (await weaponCategory({ name: category })).stances;
 };

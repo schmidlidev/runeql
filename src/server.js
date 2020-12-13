@@ -9,6 +9,7 @@ import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
 import price from "./resolvers/price.js";
 import stances from "./resolvers/stances.js";
+import weaponCategory from "./resolvers/weaponCategory.js";
 
 const schema = await loadSchema("./src/schema/Schema.gql", {
   loaders: [new GraphQLFileLoader()],
@@ -18,6 +19,7 @@ const schema = await loadSchema("./src/schema/Schema.gql", {
 const root = {
   item: item,
   items: items,
+  weaponCategory: weaponCategory,
 };
 
 const resolvers = {
