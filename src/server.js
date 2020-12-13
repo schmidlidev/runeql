@@ -1,3 +1,4 @@
+import depthLimit from "graphql-depth-limit";
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { loadSchema } from "@graphql-tools/load";
@@ -43,6 +44,7 @@ app.use(
   graphqlHTTP({
     schema: schemaWithResolvers,
     rootValue: root,
+    validationRules: [depthLimit(10)],
     graphiql: true,
   })
 );

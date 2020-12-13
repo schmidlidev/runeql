@@ -1,4 +1,6 @@
 import mongo from "../mongo.js";
+import config from "../config.js";
+import { min } from "../utilities.js";
 
 export default async ({ nameLike, qualifiedNameLike, slot, limit }) => {
   const Items = mongo.collection("items");
@@ -19,10 +21,9 @@ export default async ({ nameLike, qualifiedNameLike, slot, limit }) => {
 
   let result = Items.find(query);
 
-  // Optional filtering parameters
-  if (limit) {
-    result = result.limit(limit);
-  }
+  // Filtering parameters
+  limit = min([limit, config.DEPTH_LIMIT]);
+  result = result.limit(limit);
 
   return await result.toArray();
 };
