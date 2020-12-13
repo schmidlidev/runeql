@@ -1,7 +1,0 @@
-type Stances {
-  combat_style: String
-  attack_type: String
-  attack_style: String
-  experience: String
-  boosts: String
-}

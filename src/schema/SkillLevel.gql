@@ -1,0 +1,6 @@
+# import SkillName from "SkillName.gql"
+
+type SkillLevel {
+  skill: SkillName!
+  level: Int!
+}

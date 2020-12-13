@@ -1,4 +1,0 @@
-type Requirements {
-  attack: Int
-  defence: Int
-}

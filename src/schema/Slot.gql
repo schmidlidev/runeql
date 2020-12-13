@@ -1,0 +1,14 @@
+enum Slot {
+  head
+  cape
+  neck
+  ammunition
+  weapon
+  shield # offhand?
+  body
+  legs
+  hands
+  feet
+  ring
+  twohanded
+}

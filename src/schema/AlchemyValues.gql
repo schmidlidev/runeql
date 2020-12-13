@@ -1,0 +1,4 @@
+type AlchemyValues {
+  high: Int!
+  low: Int!
+}

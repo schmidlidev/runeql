@@ -1,20 +1,11 @@
-# import Requirements from "requirements.gql"
+# import Slot from "Slot.gql"
+# import SkillLevel from "SkillLevel.gql"
+# import Bonuses from "Bonuses.gql"
+# import WeaponAttributes from "WeaponAttributes.gql"
 
 type Equipment {
-  attack_stab: Int
-  attack_slash: Int
-  attack_crush: Int
-  attack_magic: Int
-  attack_ranged: Int
-  defence_stab: Int
-  defence_slash: Int
-  defence_crush: Int
-  defence_magic: Int
-  defence_ranged: Int
-  melee_strength: Int
-  ranged_strength: Int
-  magic_damage: Int
-  prayer: Int
-  slot: String
-  requirements: Requirements
+  slot: Slot!
+  requirements: [SkillLevel!]!
+  bonuses: Bonuses!
+  weapon: WeaponAttributes
 }

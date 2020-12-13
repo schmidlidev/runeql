@@ -1,0 +1,7 @@
+type AttackBonuses {
+  stab: Int!
+  slash: Int!
+  crush: Int!
+  ranged: Int!
+  magic: Int!
+}

@@ -1,6 +1,6 @@
-# import Item from "item.gql"
+# import Item from "Item.gql"
 
 type Query {
-  items(duplicate: Boolean = false, nameLike: String, limit: Int): [Item]
+  items(nameLike: String, limit: Int): [Item!]!
   item(id: Int): Item
 }

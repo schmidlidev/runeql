@@ -1,0 +1,10 @@
+# import AttackBonuses from "AttackBonuses.gql"
+# import DefenceBonuses from "DefenceBonuses.gql"
+# import StrengthBonuses from "StrengthBonuses.gql"
+
+type Bonuses {
+  attack: AttackBonuses!
+  defence: DefenceBonuses!
+  strength: StrengthBonuses!
+  prayer: Int!
+}

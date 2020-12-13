@@ -1,0 +1,6 @@
+# import WeaponCategory from "WeaponCategory.gql"
+
+type WeaponAttributes {
+  speed: Int!
+  category: WeaponCategory!
+}
