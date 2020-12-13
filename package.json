@@ -7,7 +7,7 @@
   "author": "schmidli <schmidlidev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/server.js -e js,gql"
+    "start": "NODE_ENV=development nodemon src/server.js -e js,gql"
   },
   "type": "module",
   "devDependencies": {

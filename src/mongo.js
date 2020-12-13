@@ -1,7 +1,9 @@
 import mongodb from "mongodb";
 
+import config from "./config.js";
+
 console.log("Creating MongoDB Client");
-const client = await mongodb.MongoClient.connect("mongodb://localhost:27017/", {
+const client = await mongodb.MongoClient.connect(config.mongo_uri, {
   useUnifiedTopology: true,
 });
 
