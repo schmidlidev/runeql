@@ -1,4 +1,4 @@
-# import SkillName from "SkillName.gql"
+# import SkillName from "./enums/SkillName.gql"
 
 type SkillLevel {
   skill: SkillName!

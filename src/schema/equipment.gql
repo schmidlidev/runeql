@@ -1,4 +1,4 @@
-# import Slot from "Slot.gql"
+# import Slot from "./enums/Slot.gql"
 # import SkillLevel from "SkillLevel.gql"
 # import Bonuses from "Bonuses.gql"
 # import WeaponAttributes from "WeaponAttributes.gql"

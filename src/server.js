@@ -8,6 +8,7 @@ import cors from "cors";
 import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
 import price from "./resolvers/price.js";
+import stances from "./resolvers/stances.js";
 
 const schema = await loadSchema("./src/schema/Schema.gql", {
   loaders: [new GraphQLFileLoader()],
@@ -23,6 +24,11 @@ const resolvers = {
   Item: {
     price(parent) {
       if (parent.tradeable_ge) return price(parent.id);
+    },
+  },
+  WeaponCategory: {
+    stances(parent) {
+      return stances(parent.name);
     },
   },
 };

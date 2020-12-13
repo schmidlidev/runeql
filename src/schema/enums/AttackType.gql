@@ -1,0 +1,7 @@
+enum AttackType {
+  stab
+  slash
+  crush
+  ranged
+  magic
+}

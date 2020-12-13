@@ -1,3 +1,6 @@
+# import Stance from "Stance.gql"
+
 type WeaponCategory {
   name: String!
+  stances: [Stance!]!
 }
