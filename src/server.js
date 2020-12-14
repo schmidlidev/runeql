@@ -5,6 +5,9 @@ import { loadSchema } from "@graphql-tools/load";
 import { addResolversToSchema } from "@graphql-tools/schema";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import cors from "cors";
+import http from "http";
+import https from "https";
+import fs from "fs";
 
 import config from "./config.js";
 import { mongoClient } from "./mongo.js";
@@ -14,6 +17,7 @@ import price from "./resolvers/price.js";
 import stances from "./resolvers/stances.js";
 import weaponCategory from "./resolvers/weaponCategory.js";
 
+// Schema
 const schema = await loadSchema("./src/schema/Schema.gql", {
   loaders: [new GraphQLFileLoader()],
 });
@@ -39,10 +43,11 @@ const resolvers = {
 };
 const schemaWithResolvers = addResolversToSchema({ schema, resolvers });
 
+// Express config
 const app = express();
 app.use(cors());
 app.use(
-  "/graphql",
+  "/",
   graphqlHTTP({
     schema: schemaWithResolvers,
     rootValue: root,
@@ -50,12 +55,29 @@ app.use(
     graphiql: true,
   })
 );
-app.listen(config.port, () => {
-  console.log(
-    `Running a GraphQL API server at http://localhost:${config.port}/graphql`
-  );
+
+// HTTP
+const httpServer = http.createServer(app);
+httpServer.listen(config.port, () => {
+  console.log(`HTTP Server running on port ${config.port}`);
 });
 
+// HTTPS
+if (process.env.NODE_ENV === "production") {
+  const httpsServer = https.createServer(
+    {
+      key: fs.readFileSync("/etc/letsencrypt/live/runeql.com/privkey.pem"),
+      cert: fs.readFileSync("/etc/letsencrypt/live/runeql.com/fullchain.pem"),
+    },
+    app
+  );
+
+  httpsServer.listen(443, () => {
+    console.log("HTTPS Server running on port 443");
+  });
+}
+
+// Close Mongo
 process.on("SIGINT", () => {
   console.info("Interrupted");
   mongoClient.close();
