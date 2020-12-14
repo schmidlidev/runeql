@@ -1,5 +1,5 @@
 const config = {
-  DEPTH_LIMIT: 50,
+  AMOUNT_LIMIT: 50,
 };
 
 if (process.env.NODE_ENV === "development") {

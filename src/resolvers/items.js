@@ -1,6 +1,6 @@
 import mongo from "../mongo.js";
 import config from "../config.js";
-import { min } from "../utilities.js";
+import { amountLimit } from "../utilities.js";
 
 export default async ({
   nameLike,
@@ -51,7 +51,7 @@ export default async ({
   let result = Items.find(query);
 
   // Filtering parameters
-  limit = min([limit, config.DEPTH_LIMIT]);
+  limit = amountLimit(limit);
   result = result.limit(limit);
 
   return await result.toArray();
