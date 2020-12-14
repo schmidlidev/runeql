@@ -6,6 +6,8 @@ import { addResolversToSchema } from "@graphql-tools/schema";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import cors from "cors";
 
+import config from "./config.js";
+import { mongoClient } from "./mongo.js";
 import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
 import price from "./resolvers/price.js";
@@ -48,6 +50,14 @@ app.use(
     graphiql: true,
   })
 );
-app.listen(4000, () => {
-  console.log("Running a GraphQL API server at http://localhost:4000/graphql");
+app.listen(config.port, () => {
+  console.log(
+    `Running a GraphQL API server at http://localhost:${config.port}/graphql`
+  );
+});
+
+process.on("SIGINT", () => {
+  console.info("Interrupted");
+  mongoClient.close();
+  process.exit(0);
 });
