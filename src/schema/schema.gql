@@ -7,6 +7,12 @@ type Query {
     nameLike: String
     qualifiedNameLike: String
     slot: Slot
+    members: Boolean
+    quest: Boolean
+    stackable: Boolean
+    tradeable: Boolean
+    tradeable_ge: Boolean
+    equipable: Boolean
     limit: Int
   ): [Item!]!
   item(id: Int): Item

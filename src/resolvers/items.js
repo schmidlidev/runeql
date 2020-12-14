@@ -2,7 +2,18 @@ import mongo from "../mongo.js";
 import config from "../config.js";
 import { min } from "../utilities.js";
 
-export default async ({ nameLike, qualifiedNameLike, slot, limit }) => {
+export default async ({
+  nameLike,
+  qualifiedNameLike,
+  slot,
+  members,
+  quest,
+  stackable,
+  tradeable,
+  tradeable_ge,
+  equipable,
+  limit,
+}) => {
   const Items = mongo.collection("items");
 
   // Required and default fields
@@ -17,6 +28,24 @@ export default async ({ nameLike, qualifiedNameLike, slot, limit }) => {
   }
   if (slot) {
     query["equipment.slot"] = slot;
+  }
+  if (members !== undefined) {
+    query.members = members;
+  }
+  if (quest !== undefined) {
+    query.quest = quest;
+  }
+  if (stackable !== undefined) {
+    query.stackable = stackable;
+  }
+  if (tradeable !== undefined) {
+    query.tradeable = tradeable;
+  }
+  if (tradeable_ge !== undefined) {
+    query.tradeable_ge = tradeable_ge;
+  }
+  if (equipable !== undefined) {
+    query.equipable = equipable;
   }
 
   let result = Items.find(query);
