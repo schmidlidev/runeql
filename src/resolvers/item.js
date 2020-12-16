@@ -3,5 +3,7 @@ import mongo from "../mongo.js";
 export default async ({ id }) => {
   const Items = mongo.collection("items");
 
-  return await Items.findOne({ id: id });
+  let item = await Items.findOne({ id: id });
+  if (item === null) console.log(id);
+  return item;
 };

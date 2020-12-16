@@ -1,0 +1,11 @@
+enum SlayerMaster {
+  turael
+  spria
+  krystilia
+  mazchna
+  vannaka
+  chaeldar
+  konar
+  nieve
+  duradel
+}

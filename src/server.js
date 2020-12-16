@@ -10,9 +10,10 @@ import https from "https";
 import fs from "fs";
 
 import config from "./config.js";
-import { mongoClient } from "./mongo.js";
 import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
+import { mongoClient } from "./mongo.js";
+import monster from "./resolvers/monster.js";
 import price from "./resolvers/price.js";
 import stances from "./resolvers/stances.js";
 import weaponCategory from "./resolvers/weaponCategory.js";
@@ -26,6 +27,7 @@ const schema = await loadSchema("./src/schema/Schema.gql", {
 const root = {
   item: item,
   items: items,
+  monster: monster,
   weaponCategory: weaponCategory,
 };
 
@@ -38,6 +40,11 @@ const resolvers = {
   WeaponCategory: {
     stances(parent) {
       return stances(parent.name);
+    },
+  },
+  ItemDrop: {
+    item(parent) {
+      return item(parent);
     },
   },
 };

@@ -1,0 +1,8 @@
+# import SlayerMaster from "./enums/SlayerMaster.gql"
+
+type SlayerInfo {
+  masters: [SlayerMaster!]!
+  level: Int!
+  xp: Float!
+  categories: [String!]!
+}

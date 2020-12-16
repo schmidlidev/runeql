@@ -1,0 +1,5 @@
+type MonsterAttackBonuses {
+  melee: Int!
+  ranged: Int!
+  magic: Int!
+}

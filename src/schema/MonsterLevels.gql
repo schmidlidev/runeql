@@ -1,0 +1,9 @@
+type MonsterLevels {
+  combat: Int!
+  hitpoints: Int!
+  attack: Int!
+  strength: Int!
+  defence: Int!
+  ranged: Int!
+  magic: Int!
+}

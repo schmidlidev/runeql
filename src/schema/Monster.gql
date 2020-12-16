@@ -1,0 +1,31 @@
+# import StrengthBonuses from "StrengthBonuses.gql"
+# import DefenceBonuses from "DefenceBonuses.gql"
+# import Item from "Item.gql"
+# import AttackType from "enums/AttackType.gql"
+# import SkillLevel from "SkillLevel.gql"
+# import SlayerInfo from "SlayerInfo.gql"
+# import MonsterBonuses from "MonsterBonuses.gql"
+# import ItemDrop from "ItemDrop.gql"
+# import MonsterLevels from "MonsterLevels.gql"
+
+type Monster {
+  id: Int!
+  name: String!
+  qualified_name: String!
+  release_date: String!
+  size: Int!
+  examine: String!
+  wiki_url: String!
+  attributes: [String!]!
+  aggressive: Boolean!
+  poisonous: Boolean!
+  immune_poison: Boolean!
+  immune_venom: Boolean!
+  slayer: SlayerInfo
+  max_hit: Int!
+  attack_types: [AttackType!]!
+  attack_speed: Int!
+  levels: MonsterLevels!
+  bonuses: MonsterBonuses!
+  drops: [ItemDrop!]!
+}

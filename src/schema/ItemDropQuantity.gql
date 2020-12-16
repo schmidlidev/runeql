@@ -1,0 +1,8 @@
+# import ItemDropQuantityScalar from "ItemDropQuantityScalar.gql"
+# import ItemDropQuantityRange from "ItemDropQuantityRange.gql"
+# import ItemDropQuantityList from "ItemDropQuantityList.gql"
+
+union ItemDropQuantity =
+    ItemDropQuantityScalar
+  | ItemDropQuantityRange
+  | ItemDropQuantityList

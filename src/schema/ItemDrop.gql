@@ -1,0 +1,10 @@
+# import Item from "Item.gql"
+# import ItemDropQuantity from "ItemDropQuantity.gql"
+
+type ItemDrop {
+  item: Item
+  quantity: ItemDropQuantity
+  noted: Boolean!
+  members: Boolean!
+  rarity: Float!
+}

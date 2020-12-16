@@ -1,0 +1,9 @@
+# import MonsterAttackBonuses from "MonsterAttackBonuses.gql"
+# import DefenceBonuses from "DefenceBonuses.gql"
+# import StrengthBonuses from "StrengthBonuses.gql"
+
+type MonsterBonuses {
+  attack: MonsterAttackBonuses!
+  strength: StrengthBonuses!
+  defence: DefenceBonuses!
+}
