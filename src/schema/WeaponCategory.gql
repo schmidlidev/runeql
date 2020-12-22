@@ -1,6 +1,8 @@
 # import Stance from "Stance.gql"
 
+"Each category of weapons has its own set of combat stances"
 type WeaponCategory {
+  "Ex: Whips"
   name: String!
   stances: [Stance!]!
 }

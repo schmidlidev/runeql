@@ -1,4 +1,6 @@
 type AlchemyValues {
+  "High alchemy value"
   high: Int!
+  "Low alchemy value"
   low: Int!
 }

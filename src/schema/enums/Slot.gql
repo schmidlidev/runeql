@@ -1,3 +1,4 @@
+"Equipment slots"
 enum Slot {
   head
   cape
@@ -10,5 +11,6 @@ enum Slot {
   hands
   feet
   ring
+  "Consumes both weapon and shield slots"
   twohanded
 }

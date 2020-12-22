@@ -1,7 +1,14 @@
 # import AttackType from "./enums/AttackType.gql"
 
+"Combat stance"
 type Stance {
-  name: String! # Flick
-  type: AttackType # Slash
+  "Name displayed on the combat stance. Ex: Flick"
+  name: String!
+  "Ex: Slash"
+  type: AttackType
+  """
+  Style indicates for what skill exp is granted, as well as other bonuses.
+  Ex: Accuracte
+  """
   style: String # Accurate/Controlled/Defensive/etc
 }

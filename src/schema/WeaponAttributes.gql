@@ -1,6 +1,7 @@
 # import WeaponCategory from "WeaponCategory.gql"
 
 type WeaponAttributes {
+  "Number of game ticks per attack"
   speed: Int!
   category: WeaponCategory!
 }

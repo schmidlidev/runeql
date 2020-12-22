@@ -2,6 +2,7 @@
 # import DefenceBonuses from "DefenceBonuses.gql"
 # import StrengthBonuses from "StrengthBonuses.gql"
 
+"\"Stats\" provided by equipping the item"
 type Bonuses {
   attack: AttackBonuses!
   defence: DefenceBonuses!

@@ -9,23 +9,38 @@
 # import MonsterLevels from "MonsterLevels.gql"
 
 type Monster {
+  "Unique identifier"
   id: Int!
   name: String!
+  """
+  Some monsters have duplicate names, the qualified name serves to differentiate these monsters.
+  Guaranteed to be unique
+  """
   qualified_name: String!
+  "YYYY-MM-DD"
   release_date: String!
+  "Number of game tiles the monster occupies"
   size: Int!
   examine: String!
+  "URL to the wiki article for this item"
   wiki_url: String!
+  "Ex: undead"
   attributes: [String!]!
   aggressive: Boolean!
   poisonous: Boolean!
+  "Immune to poison"
   immune_poison: Boolean!
+  "Immune to venom"
   immune_venom: Boolean!
+  "If this object is null the monster cannot be assigned as a slayer task"
   slayer: SlayerInfo
   max_hit: Int!
   attack_types: [AttackType!]!
+  "Number of game ticks per attack"
   attack_speed: Int!
+  "Combat related skill levels"
   levels: MonsterLevels!
+  "Attack, Defence, and Strength bonuses"
   bonuses: MonsterBonuses!
   drops: [ItemDrop!]!
 }

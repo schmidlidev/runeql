@@ -1,5 +1,11 @@
 type StrengthBonuses {
+  "Melee strength bonus"
   melee: Int!
+  "Ranged strength bonus"
   ranged: Int!
+  """
+  Magic damage bonus in the integer form of a percentage.
+  For example, a value of 15 means 15% increased magic damage
+  """
   magic: Int!
 }

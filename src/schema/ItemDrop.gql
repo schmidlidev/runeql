@@ -3,8 +3,11 @@
 
 type ItemDrop {
   item: Item
+  "Quantity can be a scalar value, a list of scalar values, or a range"
   quantity: ItemDropQuantity
   noted: Boolean!
+  "Only drops in members worlds"
   members: Boolean!
+  "Odds that this drop is rolled"
   rarity: Float!
 }

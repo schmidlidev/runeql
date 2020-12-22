@@ -1,3 +1,4 @@
+"Combat related skill levels of a monster"
 type MonsterLevels {
   combat: Int!
   hitpoints: Int!

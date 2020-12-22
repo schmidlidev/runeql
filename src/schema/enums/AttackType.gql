@@ -1,3 +1,4 @@
+"Indicates which Attack Bonus and Defence Bonus will be used for the combat calculation"
 enum AttackType {
   stab
   slash

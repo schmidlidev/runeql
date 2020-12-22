@@ -1,3 +1,4 @@
+"Range of quantities an item can drop in"
 type ItemDropQuantityRange {
   min: Int!
   max: Int!

@@ -2,22 +2,40 @@
 # import Equipment from "Equipment.gql"
 
 type Item {
+  "Unique identifier"
   id: Int!
   name: String!
+  """
+  Some items have duplicate names, the qualified name serves to differentiate these items.
+  Guaranteed to be unique
+  """
   qualified_name: String!
   members: Boolean!
   examine: String!
+  "YYYY-MM-DD"
   release_date: String!
   weight: Float!
   quest: Boolean!
   stackable: Boolean!
+  "Tradeable through standard means"
   tradeable: Boolean!
+  """
+  Static coin value of the item.
+  Used for shop prices, alchemy values, death's coffer, etc.
+  Not to be confused with Grand Exchange price
+  """
   value: Int!
+  "If this object is null then the item is not alchable"
   alchemy: AlchemyValues
+  "Tradeable on the Grand Exchange"
   tradeable_ge: Boolean!
+  "Current Grand Exchange price"
   price: Int
+  "Grand Exchange buy limit per 4 hours"
   buy_limit: Int
+  "PNG icon encoded in Base64"
   icon: String!
+  "URL to the wiki article for this item"
   wiki_url: String!
   equipable: Boolean!
   equipment: Equipment

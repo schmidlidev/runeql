@@ -1,3 +1,4 @@
+"List of quantities an item can drop in"
 type ItemDropQuantityList {
   quantities: [Int!]!
 }

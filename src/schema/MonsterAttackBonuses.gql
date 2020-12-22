@@ -1,3 +1,4 @@
+"Unlike player attack bonuses, for melee attacks, monsters only have a singular melee attack bonus that applies to all melee attack types (stab, slash, crush)"
 type MonsterAttackBonuses {
   melee: Int!
   ranged: Int!

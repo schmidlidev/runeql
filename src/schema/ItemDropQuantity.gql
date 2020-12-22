@@ -1,8 +1,9 @@
 # import ItemDropQuantityScalar from "ItemDropQuantityScalar.gql"
-# import ItemDropQuantityRange from "ItemDropQuantityRange.gql"
 # import ItemDropQuantityList from "ItemDropQuantityList.gql"
+# import ItemDropQuantityRange from "ItemDropQuantityRange.gql"
 
+"Quantity can be a scalar value, a list of scalar values, or a range"
 union ItemDropQuantity =
     ItemDropQuantityScalar
-  | ItemDropQuantityRange
   | ItemDropQuantityList
+  | ItemDropQuantityRange

@@ -5,6 +5,7 @@
 
 type Equipment {
   slot: Slot!
+  "Skill requirements needed to equip the item"
   requirements: [SkillLevel!]!
   bonuses: Bonuses!
   weapon: WeaponAttributes

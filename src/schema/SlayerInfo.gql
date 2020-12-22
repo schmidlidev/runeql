@@ -1,8 +1,12 @@
 # import SlayerMaster from "./enums/SlayerMaster.gql"
 
 type SlayerInfo {
+  "Slayer masters that can assign this monster"
   masters: [SlayerMaster!]!
+  "Slayer level required"
   level: Int!
+  "Slayer xp granted on kill"
   xp: Float!
+  "Slayer task categories this monster can be killed for"
   categories: [String!]!
 }
