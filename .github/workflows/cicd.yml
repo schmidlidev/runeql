@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
+  CICD:
     runs-on: ubuntu-latest
 
     steps:
@@ -57,3 +57,6 @@ jobs:
           script: |
             docker-compose pull
             docker-compose up -d
+
+      - name: Rebuild Autodocs
+        run: curl -X POST -d {} ${{ NETLIFY_BUILD_HOOK }}
