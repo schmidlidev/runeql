@@ -8,12 +8,10 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development nodemon src/server.js -e js,gql",
-    "production": "NODE_ENV=production node src/server.js",
-    "docs": "./node_modules/.bin/graphdoc -e http://localhost:4000/ -o ./doc/schema"
+    "production": "NODE_ENV=production node src/server.js"
   },
   "type": "module",
   "devDependencies": {
-    "@2fd/graphdoc": "^2.4.0",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
