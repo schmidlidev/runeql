@@ -5,6 +5,7 @@ A GraphQL API for Old School Runescape data including Items, Grand Exchange pric
 Try it in the browser: https://api.runeql.com/
 
 Try it from the terminal:
+
 ```sh
 curl \
 -X POST \
@@ -28,18 +29,21 @@ https://api.runeql.com/
 API Documentation: https://www.runeql.com/schema/
 
 ## Features
-* Items
-  * Including live Grand Exchange prices
-* Monsters
-  * Including drop tables
-* Player hiscores
-  * TBD
+
+- Items
+  - Including live Grand Exchange prices
+- Monsters
+  - Including drop tables
+- Player hiscores
+  - TBD
 
 ## Related repositories
-* [runeql-tools](https://github.com/schmidlidev/runeql-tools) Various tools supporting RuneQL including scraping, transforming, and deploying data. 
-* [runeql-data](https://github.com/schmidlidev/runeql-data) The staging area for static data served by RuneQL.
+
+- [runeql-web](https://github.com/schmidlidev/runeql-web) Repository for www.runeql.com
+- [runeql-tools](https://github.com/schmidlidev/runeql-tools) Various tools supporting RuneQL including scraping, transforming, and deploying data.
+- [runeql-data](https://github.com/schmidlidev/runeql-data) The staging area for static data served by RuneQL.
 
 ## Made possible by
-* [OSRSBox](https://github.com/osrsbox/osrsbox-db)
-* [Oldschool Runescape wiki](https://oldschool.runescape.wiki/)
-* [graphdoc](https://github.com/2fd/graphdoc)
+
+- [OSRSBox](https://github.com/osrsbox/osrsbox-db)
+- [Oldschool Runescape wiki](https://oldschool.runescape.wiki/)
