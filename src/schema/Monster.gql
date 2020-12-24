@@ -11,6 +11,7 @@
 type Monster {
   "Unique identifier"
   id: Int!
+  "Name displayed in game"
   name: String!
   """
   Some monsters have duplicate names, the qualified name serves to differentiate these monsters.
