@@ -4,6 +4,7 @@
 type Item {
   "Unique identifier"
   id: Int!
+  "Name displayed in game"
   name: String!
   """
   Some items have duplicate names, the qualified name serves to differentiate these items.
