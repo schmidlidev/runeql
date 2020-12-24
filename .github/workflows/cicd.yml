@@ -2,7 +2,6 @@ name: cicd
 
 on:
   push:
-    branches: [workflow]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -41,6 +40,10 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+
+      - name: Deployment Branch Check
+        if: ${{ env.GITHUB_REF_SLUG  != 'master' }}
+        run: echo "Not on master branch, skipping deployment steps"
 
       - name: Copy docker-compose.yml to server
         if: ${{ env.GITHUB_REF_SLUG  == 'master' }}
