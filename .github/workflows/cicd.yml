@@ -15,6 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@d6257a36a9854d7936ed3756ff29b890f217b85b
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -34,12 +37,13 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: schmidli/runeql:latest
+          tags: schmidli/runeql:${{ env.GITHUB_REF_SLUG }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: Copy docker-compose.yml to server
+        if: ${{ env.GITHUB_REF_SLUG }} == "master"
         uses: appleboy/scp-action@edc8ec9139a2687bcebf0249d0352ff2a988df00
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -49,6 +53,7 @@ jobs:
           target: "/home/${{ secrets.SSH_USERNAME }}"
 
       - name: Pull and Deploy Image on server
+        if: ${{ env.GITHUB_REF_SLUG }} == "master"
         uses: appleboy/ssh-action@61e292b601b405c4b211ea30a046bb1a97e45bdc
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -59,4 +64,5 @@ jobs:
             docker-compose up -d
 
       - name: Rebuild Autodocs
+        if: ${{ env.GITHUB_REF_SLUG }} == "master"
         run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
