@@ -1,5 +1,7 @@
 # RuneQL
 
+![cicd](https://github.com/schmidlidev/runeql/workflows/cicd/badge.svg?branch=master)
+
 A GraphQL API for Old School Runescape data including Items, Grand Exchange prices, Monsters, and more.
 
 Try it in the browser: https://api.runeql.com/
