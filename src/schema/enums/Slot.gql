@@ -5,12 +5,12 @@ enum Slot {
   neck
   ammunition
   weapon
-  shield # offhand?
+  offhand
   body
   legs
   hands
   feet
   ring
-  "Consumes both weapon and shield slots"
+  "Consumes both weapon and offhand slots"
   twohanded
 }
