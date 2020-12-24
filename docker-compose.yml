@@ -9,3 +9,4 @@ services:
     volumes:
       - /etc/letsencrypt/live/runeql.com/:/etc/letsencrypt/live/runeql.com/
       - /etc/letsencrypt/archive/runeql.com/:/etc/letsencrypt/archive/runeql.com/
+    restart: on-failure
