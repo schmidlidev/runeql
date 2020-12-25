@@ -1,0 +1,12 @@
+enum MonsterAttribute {
+  demon
+  dragon
+  fiery
+  kalphite
+  leafy
+  penance
+  shade
+  undead
+  vampyre
+  xerician
+}

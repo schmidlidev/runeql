@@ -7,6 +7,7 @@
 # import MonsterBonuses from "MonsterBonuses.gql"
 # import ItemDrop from "ItemDrop.gql"
 # import MonsterLevels from "MonsterLevels.gql"
+# import MonsterAttribute from "./enums/MonsterAttribute.gql"
 
 type Monster {
   "Unique identifier"
@@ -26,7 +27,7 @@ type Monster {
   "URL to the wiki article for this item"
   wiki_url: String!
   "Ex: undead"
-  attributes: [String!]!
+  attributes: [MonsterAttribute!]!
   aggressive: Boolean!
   poisonous: Boolean!
   "Immune to poison"

@@ -1,4 +1,5 @@
 # import SlayerMaster from "./enums/SlayerMaster.gql"
+# import SlayerCategory from "./enums/SlayerCategory.gql"
 
 type SlayerInfo {
   "Slayer masters that can assign this monster"
@@ -8,5 +9,5 @@ type SlayerInfo {
   "Slayer xp granted on kill"
   xp: Float!
   "Slayer task categories this monster can be killed for"
-  categories: [String!]!
+  categories: [SlayerCategory!]!
 }
