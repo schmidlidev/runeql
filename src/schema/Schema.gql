@@ -16,7 +16,7 @@ type Query {
     equipable: Boolean
     limit: Int
   ): [Item!]!
-  item(id: Int): Item
+  item(id: Int, name: String, qualifiedName: String): Item
   weaponCategory(name: String): WeaponCategory
   monster(id: Int): Monster
 }

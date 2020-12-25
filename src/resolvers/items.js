@@ -1,5 +1,4 @@
 import mongo from "../mongo.js";
-import config from "../config.js";
 import { amountLimit } from "../utilities.js";
 
 export default async ({
