@@ -1,7 +1,19 @@
 import mongo from "../mongo.js";
 
-export default async ({ id }) => {
+export default async ({ id, name, qualifiedName }) => {
   const Monsters = mongo.collection("monsters");
 
-  return await Monsters.findOne({ id: id });
+  let query = {};
+
+  if (id) {
+    query.id = id;
+  }
+  if (name) {
+    query.name = name;
+  }
+  if (qualifiedName) {
+    query.qualified_name = qualifiedName;
+  }
+
+  return await Monsters.findOne(query);
 };

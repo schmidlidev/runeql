@@ -18,5 +18,5 @@ type Query {
   ): [Item!]!
   item(id: Int, name: String, qualifiedName: String): Item
   weaponCategory(name: String): WeaponCategory
-  monster(id: Int): Monster
+  monster(id: Int, name: String, qualifiedName: String): Monster
 }
