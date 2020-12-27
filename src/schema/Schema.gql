@@ -2,6 +2,8 @@
 # import Slot from "./enums/Slot.gql"
 # import WeaponCategory from "WeaponCategory.gql"
 # import Monster from "Monster.gql"
+# import MonsterAttribute from "./enums/MonsterAttribute.gql"
+# import SlayerCategory from "./enums/SlayerCategory.gql"
 
 type Query {
   items(
@@ -18,5 +20,14 @@ type Query {
   ): [Item!]!
   item(id: Int, name: String, qualifiedName: String): Item
   weaponCategory(name: String): WeaponCategory
+  monsters(
+    nameLike: String
+    qualifiedNameLike: String
+    members: Boolean
+    attribute: MonsterAttribute
+    slayer: Boolean
+    slayerCategory: SlayerCategory
+    limit: Int
+  ): [Monster!]!
   monster(id: Int, name: String, qualifiedName: String): Monster
 }

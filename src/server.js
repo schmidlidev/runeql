@@ -14,6 +14,7 @@ import item from "./resolvers/item.js";
 import items from "./resolvers/items.js";
 import { mongoClient } from "./mongo.js";
 import monster from "./resolvers/monster.js";
+import monsters from "./resolvers/monsters.js";
 import price from "./resolvers/price.js";
 import stances from "./resolvers/stances.js";
 import weaponCategory from "./resolvers/weaponCategory.js";
@@ -28,6 +29,7 @@ const root = {
   item: item,
   items: items,
   monster: monster,
+  monsters: monsters,
   weaponCategory: weaponCategory,
 };
 
