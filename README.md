@@ -1,6 +1,7 @@
 # RuneQL
 
 ![cicd](https://github.com/schmidlidev/runeql/workflows/cicd/badge.svg?branch=master)
+![Discord](https://img.shields.io/discord/792868323011723275)
 
 A GraphQL API for Old School Runescape data including Items, Grand Exchange prices, Monsters, and more.
 
