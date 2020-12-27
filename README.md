@@ -40,6 +40,9 @@ API Documentation: https://www.runeql.com/schema/
 - Player hiscores
   - TBD
 
+If there's a feature you'd like to see implemented in RuneQL, please feel free to [open an issue](https://github.com/schmidlidev/runeql/issues/new).
+Alternatively, ask in the [RuneQL Discord](https://discord.gg/BsqnhWZTz8).
+
 ## Related repositories
 
 - [runeql-web](https://github.com/schmidlidev/runeql-web) Repository for www.runeql.com
