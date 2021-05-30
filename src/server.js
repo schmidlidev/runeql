@@ -75,8 +75,10 @@ httpServer.listen(config.port, () => {
 if (process.env.NODE_ENV === "production") {
   const httpsServer = https.createServer(
     {
-      key: fs.readFileSync("/etc/letsencrypt/live/runeql.com/privkey.pem"),
-      cert: fs.readFileSync("/etc/letsencrypt/live/runeql.com/fullchain.pem"),
+      key: fs.readFileSync("/etc/letsencrypt/live/api.runeql.com/privkey.pem"),
+      cert: fs.readFileSync(
+        "/etc/letsencrypt/live/api.runeql.com/fullchain.pem"
+      ),
     },
     app
   );
