@@ -7,6 +7,6 @@ services:
       - "443:443"
     env_file: .env
     volumes:
-      - /etc/letsencrypt/live/runeql.com/:/etc/letsencrypt/live/runeql.com/
-      - /etc/letsencrypt/archive/runeql.com/:/etc/letsencrypt/archive/runeql.com/
+      - /etc/letsencrypt/live/api.runeql.com/:/etc/letsencrypt/live/api.runeql.com/
+      - /etc/letsencrypt/archive/api.runeql.com/:/etc/letsencrypt/archive/api.runeql.com/
     restart: on-failure
