@@ -8,6 +8,7 @@ import cors from "cors";
 import http from "http";
 import https from "https";
 import fs from "fs";
+import expressPromBundle from 'express-prom-bundle'
 
 import config from "./config.js";
 import item from "./resolvers/item.js";
@@ -54,6 +55,7 @@ const schemaWithResolvers = addResolversToSchema({ schema, resolvers });
 
 // Express config
 const app = express();
+app.use(expressPromBundle({ includeMethod: true }))
 app.use(cors());
 app.use(
   "/",
