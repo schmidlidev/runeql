@@ -10,6 +10,7 @@ Try it in the browser: https://api.runeql.com/
 Try it from the terminal:
 
 ```sh
+# Request
 curl \
 -X POST \
 -H "Content-Type: application/json" \
@@ -18,6 +19,7 @@ https://api.runeql.com/
 ```
 
 ```sh
+# Response
 {
   "data":{
     "item":{

@@ -45,14 +45,14 @@ jobs:
         if: ${{ env.GITHUB_REF_SLUG  != 'master' }}
         run: echo "Not on master branch, skipping deployment steps"
 
-      - name: Copy docker-compose.yml to server
+      - name: Ship Configuration Files
         if: ${{ env.GITHUB_REF_SLUG  == 'master' }}
         uses: appleboy/scp-action@edc8ec9139a2687bcebf0249d0352ff2a988df00
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "docker-compose.yml"
+          source: "docker-compose.yml,prometheus.yml,grafana.ini"
           target: "/home/${{ secrets.SSH_USERNAME }}"
 
       - name: Pull and Deploy Image on server

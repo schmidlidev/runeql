@@ -2,11 +2,61 @@ version: "3.3"
 services:
   runeql:
     image: schmidli/runeql:master
+    container_name: runeql
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     env_file: .env
     volumes:
       - /etc/letsencrypt/live/api.runeql.com/:/etc/letsencrypt/live/api.runeql.com/
       - /etc/letsencrypt/archive/api.runeql.com/:/etc/letsencrypt/archive/api.runeql.com/
-    restart: on-failure
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    expose:
+      - 9090
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - prometheus-storage:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    restart: unless-stopped
+  
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    expose:
+      - 9100
+    restart: unless-stopped
+  
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    expose:
+      - 8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: unless-stopped
+    
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana:rw
+      - ./grafana.ini:/etc/grafana/grafana.ini:ro
+      - /etc/letsencrypt/live/api.runeql.com/:/etc/letsencrypt/live/api.runeql.com/:ro
+      - /etc/letsencrypt/archive/api.runeql.com/:/etc/letsencrypt/archive/api.runeql.com/:ro
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+    restart: unless-stopped
+
+volumes:
+  prometheus-storage:
+  grafana-storage:
