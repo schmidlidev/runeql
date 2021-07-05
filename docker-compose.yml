@@ -20,6 +20,7 @@ services:
     command:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
+      - prometheus-storage:/prometheus
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
     restart: unless-stopped
   
@@ -57,4 +58,5 @@ services:
     restart: unless-stopped
 
 volumes:
+  prometheus-storage:
   grafana-storage:
