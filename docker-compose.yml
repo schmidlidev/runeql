@@ -5,8 +5,6 @@ services:
     ports:
       - 80:80
       - 443:443
-    expose:
-      - 4000
     env_file: .env
     volumes:
       - /etc/letsencrypt/live/api.runeql.com/:/etc/letsencrypt/live/api.runeql.com/
