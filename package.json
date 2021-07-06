@@ -1,9 +1,9 @@
 {
-  "name": "runegraph",
+  "name": "runeql",
   "version": "1.0.0",
   "description": "GraphQL API for Old School Runescape Game Data",
   "main": "src/server.js",
-  "repository": "https://github.com/schmidlidev/runegraph.git",
+  "repository": "https://github.com/schmidlidev/runeql.git",
   "author": "schmidli <schmidlidev@gmail.com>",
   "license": "MIT",
   "scripts": {
