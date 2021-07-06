@@ -1,9 +1,9 @@
-import mongo from "../mongo.js";
+import mongo from '../mongo.js';
 
-export default async ({ id, name, qualifiedName }) => {
-  const Monsters = mongo.collection("monsters");
+export default ({ id, name, qualifiedName }) => {
+  const Monsters = mongo.collection('monsters');
 
-  let query = {};
+  const query = {};
 
   if (id) {
     query.id = id;
@@ -15,5 +15,5 @@ export default async ({ id, name, qualifiedName }) => {
     query.qualified_name = qualifiedName;
   }
 
-  return await Monsters.findOne(query);
+  return Monsters.findOne(query);
 };

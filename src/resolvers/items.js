@@ -1,7 +1,7 @@
-import mongo from "../mongo.js";
-import { amountLimit } from "../utilities.js";
+import mongo from '../mongo.js';
+import { amountLimit } from '../utilities.js';
 
-export default async ({
+export default ({
   nameLike,
   qualifiedNameLike,
   slot,
@@ -9,24 +9,24 @@ export default async ({
   quest,
   stackable,
   tradeable,
-  tradeable_ge,
+  tradeableGe,
   equipable,
   limit,
 }) => {
-  const Items = mongo.collection("items");
+  const Items = mongo.collection('items');
 
   // Required and default fields
-  let query = {};
+  const query = {};
 
   // Optional query parameters
   if (nameLike) {
-    query.name = RegExp(nameLike, "i");
+    query.name = RegExp(nameLike, 'i');
   }
   if (qualifiedNameLike) {
-    query.qualified_name = RegExp(qualifiedNameLike, "i");
+    query.qualified_name = RegExp(qualifiedNameLike, 'i');
   }
   if (slot) {
-    query["equipment.slot"] = slot;
+    query['equipment.slot'] = slot;
   }
   if (members !== undefined) {
     query.members = members;
@@ -40,8 +40,8 @@ export default async ({
   if (tradeable !== undefined) {
     query.tradeable = tradeable;
   }
-  if (tradeable_ge !== undefined) {
-    query.tradeable_ge = tradeable_ge;
+  if (tradeableGe !== undefined) {
+    query.tradeable_ge = tradeableGe;
   }
   if (equipable !== undefined) {
     query.equipable = equipable;
@@ -50,8 +50,7 @@ export default async ({
   let result = Items.find(query);
 
   // Filtering parameters
-  limit = amountLimit(limit);
-  result = result.limit(limit);
+  result = result.limit(amountLimit(limit));
 
-  return await result.toArray();
+  return result.toArray();
 };

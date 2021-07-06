@@ -1,5 +1,3 @@
-import weaponCategory from "./weaponCategory.js";
+import weaponCategory from './weaponCategory.js';
 
-export default async (category) => {
-  return (await weaponCategory({ name: category })).stances;
-};
+export default (category) => weaponCategory({ name: category }).stances;
