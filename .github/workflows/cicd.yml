@@ -17,6 +17,12 @@ jobs:
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@d6257a36a9854d7936ed3756ff29b890f217b85b
 
+      - name: Install Dependencies
+        run: yarn
+
+      - name: ESLint
+        run: eslint . --ext .js,.ts
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
