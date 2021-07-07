@@ -1,7 +1,7 @@
-import mongo from "../mongo.js";
+import mongo from '../mongo.js';
 
-export default async ({ name }) => {
-  const WeaponCategories = mongo.collection("weaponCategories");
+export default ({ name }) => {
+  const WeaponCategories = mongo.collection('weaponCategories');
 
-  return await WeaponCategories.findOne({ name: name });
+  return WeaponCategories.findOne({ name });
 };

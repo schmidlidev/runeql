@@ -1,13 +1,12 @@
-import config from "./config.js";
+import config from './config.js';
 
-const min = (array) => {
-  // Returns min value in an array ignoring undefined, null, and NaN inputs
-  array = array.filter(
-    (e) => (e = e === undefined || e === null || isNaN(e) ? 0 : e)
-  );
-  return Math.min.apply(Math, array);
-};
+/**
+ * Returns min value in an array ignoring undefined, null, and NaN inputs
+ * @param {Object[]} array
+ * @returns minimum value
+ */
+export const min = (array) => (
+  Math.min(array.filter((e) => (e === undefined || e === null || Number.isNaN(e) ? 0 : e)))
+);
 
-export const amountLimit = (limit) => {
-  return min([limit, config.AMOUNT_LIMIT]);
-};
+export const amountLimit = (limit) => min([limit, config.AMOUNT_LIMIT]);
