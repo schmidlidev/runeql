@@ -21,7 +21,7 @@ jobs:
         run: yarn
 
       - name: ESLint
-        run: yarn eslint . --ext .js,.ts
+        run: yarn lint
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
