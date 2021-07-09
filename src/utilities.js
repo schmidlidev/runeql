@@ -6,7 +6,7 @@ import config from './config.js';
  * @returns minimum value
  */
 export const min = (array) => (
-  Math.min(array.filter((e) => (e === undefined || e === null || Number.isNaN(e) ? 0 : e)))
+  Math.min(...array.filter((e) => (e === undefined || e === null || Number.isNaN(e) ? 0 : e)))
 );
 
 export const amountLimit = (limit) => min([limit, config.AMOUNT_LIMIT]);
